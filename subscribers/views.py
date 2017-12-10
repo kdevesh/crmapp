@@ -16,6 +16,6 @@ def subscriber_new(request):
 			user.set_password(password)
 			user.save()
 			return HttpResponseRedirect('/success/')
-		else:
-			form=SubscriberForm()
+	else:
+		form=SubscriberForm()
 	return render(request, 'subscribers/subscriber_new.html', {'form':form})

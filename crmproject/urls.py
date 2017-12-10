@@ -16,13 +16,13 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from marketing.views import HomePage
-
+from subscribers import views as subscribers_views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     # Marketing pages
     url(r'^$', HomePage.as_view(), name="home"),
-
+    url(r'^signup/$',subscribers_views.subscriber_new, name='sub_new'),
 
     # Subscriber related URLs
 
